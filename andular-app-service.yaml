@@ -1,0 +1,13 @@
+# 1. The Service (Exposes the application)
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-angular-app-service
+spec:
+  selector:
+    app: my-angular-app
+  ports:
+    - protocol: TCP
+      port: 80         # Port accessible outside the pod
+      targetPort: 80   # Port the application is listening on inside the pod
+  type: LoadBalancer   # Creates an external IP (on supported cloud providers)
