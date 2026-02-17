@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: my-angular-app-deployment
 spec:
-  replicas: 2          # Maintains three identical pods for high availability
+  replicas: 4          # Maintains three identical pods for high availability
   selector:
     matchLabels:
       app: my-angular-app
@@ -17,5 +17,6 @@ spec:
         image: 938377377710.dkr.ecr.us-east-2.amazonaws.com/my-angular-app:6d5821ac
         ports:
         - containerPort: 80
+
 
 
